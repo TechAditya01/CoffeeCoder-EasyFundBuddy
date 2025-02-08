@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { ChevronLeft } from 'lucide-react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useNavigate } from 'react-router-dom'; 
+import { useNavigate } from 'react-router-dom'; // Import useNavigate hook
 
 const ApplyNow = () => {
   const [currentStep, setCurrentStep] = useState(1);
@@ -70,8 +70,8 @@ const ApplyNow = () => {
   };
 
   const handleAadhaarVerify = () => {
-    
-    window.location.href = "https://www.digitallocker.gov.in"; 
+    // Redirect user to DigiLocker for Aadhaar verification (using a placeholder URL for now)
+    window.location.href = "https://www.digitallocker.gov.in"; // Redirect to DigiLocker
   };
 
   const validateFullName = () => {
@@ -222,7 +222,7 @@ const ApplyNow = () => {
     return true;
   };
   const validateAadhaarNumber = () => {
-    const regex = /^[0-9]{12}$/; 
+    const regex = /^[0-9]{12}$/; // Aadhaar number should be 12 digits
     if (!formData.aadhaarNumber.match(regex)) {
       setErrors((prevErrors) => ({
         ...prevErrors,
@@ -238,7 +238,7 @@ const ApplyNow = () => {
   };
 
   const validatePanCardNumber = () => {
-    const regex = /^[A-Z]{5}[0-9]{4}[A-Z]{1}$/; 
+    const regex = /^[A-Z]{5}[0-9]{4}[A-Z]{1}$/; // PAN card number format validation
     if (!formData.panCardNumber.match(regex)) {
       setErrors((prevErrors) => ({
         ...prevErrors,
@@ -254,14 +254,14 @@ const ApplyNow = () => {
   };
 
   const validateDocuments = () => {
-    
+    // Check if all required documents are uploaded (this example assumes file input elements)
     const photo = document.getElementById('photo').files.length;
     const signature = document.getElementById('signature').files.length;
     const bankPassbook = document.getElementById('bank-passbook').files.length;
     const aadhaarCard = document.getElementById('aadhaar-card').files.length;
     const panCard = document.getElementById('pan-card').files.length;
   
- 
+    // Return true if all documents are uploaded, else return false
     if (photo && signature && bankPassbook && aadhaarCard && panCard) {
       return true;
     } else {
@@ -273,7 +273,7 @@ const ApplyNow = () => {
 
   const handleNext = () => {
     const isValid =
-      (currentStep === 1 && validateFullName() && validateGender() && validateAge() && validateMobileNumber() && validateDateOfBirth()) ||  
+      (currentStep === 1 && validateFullName() && validateGender() && validateAge() && validateMobileNumber() && validateDateOfBirth()) ||  // Step 1
       (currentStep === 2 && validateAadhaarNumber() ) || 
       (currentStep === 3 && validateBankDetails()) ||  
       (currentStep === 4 && validateDocuments()) || 
@@ -281,8 +281,9 @@ const ApplyNow = () => {
   
     if (isValid) {
       if (currentStep === 5) {
-        setCurrentStep(6);  
-        setCurrentStep(currentStep + 1);  
+        setCurrentStep(6);  // Move to Step 6 when on Step 5 (Submit)
+      } else {
+        setCurrentStep(currentStep + 1);  // Proceed to the next step
       }
     }
   };
@@ -294,7 +295,7 @@ const ApplyNow = () => {
 
   return (
     <div className="d-flex min-vh-100 bg-light">
-
+      {/* Left Side - Progress Steps */}
       <div className="col-4 p-4 bg-white border-end">
         <div className="d-flex align-items-center mb-4 text-primary cursor-pointer">
           <ChevronLeft size={20} />
@@ -321,7 +322,7 @@ const ApplyNow = () => {
             <div key={step.number} className="position-relative d-flex align-items-start mb-4">
               <div className="position-relative">
                 <div
-                  className={`step-circle d-flex align-items-center justify-content-center rounded-circle border border-3 
+                  className={`step-circle d-flex align-items-center justify-content-center rounded-circle border border-2 
                   ${currentStep >= step.number ? 'bg-primary border-primary text-white' : 'border-secondary text-secondary'}`}
                 >
                   {step.number}
@@ -341,7 +342,7 @@ const ApplyNow = () => {
       {/* Right Side - Form Content */}
       <div className="col-8 p-4">
         <div className="mx-auto" style={{ maxWidth: '600px' }}>
-          
+          {/* Conditional Rendering for each step */}
           {currentStep === 1 && (
             <>
               <h2 className="fs-4 fw-semibold mb-4">Necessary Information</h2>
@@ -450,7 +451,7 @@ const ApplyNow = () => {
   <>
     <h2 className="fs-4 fw-semibold mb-4">Bank Details</h2>
     <div className="mb-3">
-      <label className="form-label">Account Holder Name</label>
+      <label className="form-label">Account Holder</label>
       <input
         type="text"
         className={`form-control ${errors.accountHolder ? 'is-invalid' : ''}`}
@@ -579,7 +580,7 @@ const ApplyNow = () => {
     <p><strong>IFSC Code:</strong> {formData.ifscCode}</p>
     <p><strong>Branch Address:</strong> {formData.branchAddress}</p>
   
-    
+    <button className="btn btn-primary" onClick={handleSubmit}>Submit Application</button>
   </>
 )}
 
