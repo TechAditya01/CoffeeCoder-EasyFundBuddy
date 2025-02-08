@@ -11,6 +11,8 @@ import Chat from "./components/chat/ChatBot"; // Import Chat page
 import Read from "./pages/Read";
 import ApplyNow from "./pages/ApplyNow";
 import ContactUs from "./pages/ContactUs";
+import Dashboard from "./pages/Dashboard";
+import Tracking from "./pages/Tracking";
 
 function App() {
   return (
@@ -42,6 +44,8 @@ function MainLayout() {
         <Route path="/read" element={<Read />} />
         <Route path="/apply-now" element={<ApplyNow />} />
         <Route path="/contact" element={<ContactUs />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/tracking" element={<Tracking />} />
       </Routes>
       
 

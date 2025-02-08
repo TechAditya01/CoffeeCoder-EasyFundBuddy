@@ -154,18 +154,34 @@ const ApplyNow = () => {
     return true;
   };
   const validateBankDetails = () => {
-    if (!formData.accountHolder || !formData.accountNumber || !formData.ifscCode || !formData.branchAddress) {
-      setErrors((prevErrors) => ({
-        ...prevErrors,
-        accountHolder: 'All bank details must be filled.',
-      }));
-      return false;
+    let newErrors = {};
+    
+    if (!formData.accountHolder.trim()) {
+      newErrors.accountHolder = "Account Holder Name is required";
+    } else if (!/^[A-Za-z\s]+$/.test(formData.accountHolder)) {
+      newErrors.accountHolder = "Only letters and spaces allowed";
     }
-    setErrors((prevErrors) => ({
-      ...prevErrors,
-      accountHolder: '',
-    }));
-    return true;
+  
+    if (!formData.accountNumber.trim()) {
+      newErrors.accountNumber = "Account Number is required";
+    } else if (!/^\d{8,18}$/.test(formData.accountNumber)) {
+      newErrors.accountNumber = "Account Number must be 8-18 digits";
+    }
+  
+    if (!formData.ifscCode.trim()) {
+      newErrors.ifscCode = "IFSC Code is required";
+    } else if (!/^[A-Z]{4}\d{7}$/.test(formData.ifscCode)) {
+      newErrors.ifscCode = "Invalid IFSC Code format (e.g., ABCD1234567)";
+    }
+  
+    if (!formData.branchAddress.trim()) {
+      newErrors.branchAddress = "Branch Address is required";
+    } else if (formData.branchAddress.trim().length < 5) {
+      newErrors.branchAddress = "Branch Address must be at least 5 characters";
+    }
+  
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
   };
   const validateDocument = () => {
     const { photo, signature, bankPassbook, aadhaarCard, panCard } = formData;
@@ -451,7 +467,7 @@ const ApplyNow = () => {
   <>
     <h2 className="fs-4 fw-semibold mb-4">Bank Details</h2>
     <div className="mb-3">
-      <label className="form-label">Account Holder</label>
+      <label className="form-label">Account Holder Name</label>
       <input
         type="text"
         className={`form-control ${errors.accountHolder ? 'is-invalid' : ''}`}
@@ -575,13 +591,24 @@ const ApplyNow = () => {
     <p><strong>Date of Birth:</strong> {formData.dateOfBirth}</p>
     <p><strong>Aadhaar Number:</strong> {formData.aadhaarNumber}</p>
     <p><strong>PAN Card Number:</strong> {formData.panCardNumber}</p>
-    <p><strong>Bank Account Holder:</strong> {formData.accountHolder}</p>
+    <p><strong>Bank Account Holder Name:</strong> {formData.accountHolder}</p>
     <p><strong>Bank Account Number:</strong> {formData.accountNumber}</p>
     <p><strong>IFSC Code:</strong> {formData.ifscCode}</p>
     <p><strong>Branch Address:</strong> {formData.branchAddress}</p>
   
-    <button className="btn btn-primary" onClick={handleSubmit}>Submit Application</button>
+
   </>
+)}
+{/* Submit Section */}
+{currentStep === 6 && (
+  <div className="text-center mt-4">
+    <h4>Your application has been successfully submitted!</h4>
+    <p>Your application will be processed within 15 days. You can track its status live.</p>
+    <div className="d-flex justify-content-center gap-3 mt-3">
+      <button className="btn btn-info" onClick={() => navigate('/tracking')}>Live Tracking</button>
+      <button className="btn btn-primary" onClick={() => navigate('/dashboard')}>Dashboard</button>
+    </div>
+  </div>
 )}
 
 {/* Next Button */}
@@ -595,7 +622,7 @@ const ApplyNow = () => {
   </button>
   <button
     className="btn btn-primary"
-    onClick={handleNext}
+    onClick={currentStep === 5 ? () => setCurrentStep(6) : handleNext}
   >
     {currentStep === 5 ? 'Submit' : 'Next'}
   </button>

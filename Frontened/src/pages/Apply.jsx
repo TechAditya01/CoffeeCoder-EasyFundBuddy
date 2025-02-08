@@ -63,19 +63,20 @@ const Apply = () => {
           </div>
         </section>
 
-        {/* Chat Bot */}
         <div className="position-fixed bottom-0 end-0 mb-4 me-4">
-          {!isChatOpen ? (
-            <button
-              className="btn btn-primary rounded-circle p-3 shadow-lg"
-              onClick={() => setIsChatOpen(true)}
-            >
-              <i className="bi bi-chat-dots-fill fs-4"></i>
-            </button>
-          ) : (
-            <ChatBot onClose={() => setIsChatOpen(false)} />
-          )}
-        </div>
+  {!isChatOpen ? (
+    <button
+      className="btn btn-primary rounded-pill px-3 py-2 shadow-lg fw-bold"
+      onClick={() => setIsChatOpen(true)}
+    >
+      May I help here?
+    </button>
+  ) : (
+    <ChatBot onClose={() => setIsChatOpen(false)} />
+  )}
+</div>
+
+
         <Footer />
       </main>
     </>
