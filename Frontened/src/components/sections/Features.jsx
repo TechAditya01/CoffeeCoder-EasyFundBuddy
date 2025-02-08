@@ -6,17 +6,17 @@ const BankingFeatures = () => {
 
   const features = [
     {
-      title: "Earn 10x the National Average",
-      description: "Get 4.50% APY on your balance when you deposit 250+ per month.",
-      icon: "💰"
+      title: "Leverage for Women",
+      description: "Empowering women with easy access to savings and loans.",
+      icon: "♀️"
     },
     {
-      title: "Freedom from fees",
+      title: "Freedom from fees for farmers",
       description: "Keep more of your money with no account fees and free transfers.",
-      icon: "✨"
+      icon: "🌾"
     },
     {
-      title: "0 minimum balance",
+      title: " Minimum balance",
       description: "No minimum to open or minimum balances required.",
       icon: "🎯"
     },

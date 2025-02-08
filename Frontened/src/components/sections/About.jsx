@@ -22,17 +22,17 @@ const About = () => {
 
   const team = [
     {
-      name: "Animesh Chandra",
+      name: "Aditya",
       role: "Founder & CEO",
       bio: "Visionary leader  in EasyFundBuddy's mission to revolutionize banking"
     },
     {
-      name: "Aditya Kumar",
+      name: "Animesh",
       role: "CTO",
       bio: "Tech innovator specializing in scalable solutions"
     },
     {
-      name: "Manisha Kumari",
+      name: "Manisha & Manish",
       role: "Lead Developer",
       bio: "Full-stack expert with a passion for clean code"
     }

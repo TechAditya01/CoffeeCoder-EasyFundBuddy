@@ -1,21 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom"; 
-import logoimg from '../../assets/images/1.png';
-
-
-
-
+import logoimg from "../../assets/images/1.png";
 
 const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
       <div className="container">
         {/* Logo and Brand */}
-        <a className="navbar-brand d-flex align-items-center" href="/">
-       
-        <img src={logoimg} alt="Logo" height="40" />
+        <Link className="navbar-brand d-flex align-items-center" to="/">
+          <img src={logoimg} alt="Logo" height="40" />
           <span className="ms-2 fw-bold">EasyFundBuddy</span>
-        </a>
+        </Link>
 
         {/* Toggle Button */}
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
@@ -31,17 +26,14 @@ const Navbar = () => {
                 <i className="bi bi-person"></i> Personal
               </a>
               <ul className="dropdown-menu">
-                <li><a className="dropdown-item" href="#">🏠 Home Loan</a></li>
-                <li><a className="dropdown-item" href="#">🚗 Car Loan </a></li>
-                <li><a className="dropdown-item" href="#">📖 Education Loan</a></li>
-            
+                <li><Link className="dropdown-item" to="/home-loan">🏠 Home Loan</Link></li>
+                <li><Link className="dropdown-item" to="/car-loan">🚗 Car Loan</Link></li>
+                <li><Link className="dropdown-item" to="/education-loan">📖 Education Loan</Link></li>
               </ul>
             </li>
+            {/* Contact Us Link */}
             <li className="nav-item">
-              <a className="nav-link" href="#contact">Contact Us</a>
-            </li>
-            <li className="nav-item ms-2">
-            
+              <Link className="nav-link" to="/contact">Contact Us</Link>
             </li>
           </ul>
         </div>
