@@ -13,12 +13,12 @@ const Hero = () => {
           {/* Left Content */}
           <div className="col-lg-5 py-5 px-5">
             <div className="pe-lg-5">
-              <p className="text-primary fw-semibold mb-3">PERSONAL BANKING</p>
+             
               <h1 className="display-4 fw-bold text-navy mb-4" style={{ color: '#003366' }}>
-                Award-winning banking at your fingertips
+              "EasyFundBuddy - Your Smart Way to Financial Freedom!"
               </h1>
               <p className="lead text-muted mb-5">
-                Our Rewards Checking account, competitive CDs, and new LevelUp Savings account will help you meet your goals.
+              "Our flexible loan options, competitive rates, and new LevelUp Loan program will help you achieve your financial goals."
               </p>
               <button className="btn btn-danger btn-lg px-4 py-3" onClick={() => navigate("/apply")}>
                 Apply Now
