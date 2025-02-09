@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyFundBuddy - Dashboard</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/hecktu_hackathon/Frontend/static/css/dashboard.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <span class="ms-2 fw-bold">EasyFundBuddy</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            <i class="bi bi-person"></i> Personal Loan
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">🏠 Home Loan</a></li>
+                            <li><a class="dropdown-item" href="#">🚗 Car Loan</a></li>
+                            <li><a class="dropdown-item" href="#">📖 Education Loan</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-5 pt-4">
+        <div class="row">
+            <!-- Loan Options -->
+            <div class="col-md-5">
+                <h3>Loan Options</h3>
+                <div class="loan-option p-3 border rounded shadow-sm">
+                    <h4>Home Loan</h4>
+                    <h5>Benefits</h5>
+                    <ul>
+                        <li>Competitive interest rates</li>
+                        <li>Flexible repayment options</li>
+                        <li>Quick approval process</li>
+                    </ul>
+                    <h5>Requirements</h5>
+                    <ul>
+                        <li>Proof of income</li>
+                        <li>Property documents</li>
+                        <li>Credit history</li>
+                    </ul>
+                    <button class="btn btn-primary w-100" onclick="redirectToApplyHome()">Apply for Home Loan</button>
+                </div>
+            </div>
+            <div class="col-md-1 d-flex justify-content-center">
+                <div class="vr h-100"></div>
+            </div>
+            <div class="col-md-6">
+                <h3>Past Transactions</h3>
+                <ul class="list-group mb-3">
+                    <li class="list-group-item">Loan Payment ₹10,000 - 02 Feb 2025</li>
+                    <li class="list-group-item">Loan Approved ₹5 Lac - 10 Jan 2025</li>
+                    <li class="list-group-item">Loan Inquiry Submitted - 20 Dec 2024</li>
+                </ul>
+                <h3>Live Tracking</h3>
+                <div class="card">
+                    <div class="card-body">
+                        <p>Tracking your loan application...</p>
+                        <div class="progress">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 50%;">50% Completed</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-box">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-phone-alt"></i> +91 9334170932</p>
+                    <p><i class="fas fa-envelope"></i> easyfundbuddy@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Kohka, Bhilai, Chhattisgarh, India</p>
+                </div>
+                <div class="footer-box">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-box">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-box">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 EasyFundBuddy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function redirectToApplyHome() {
+            window.location.href = "applyhome.html";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in to My Application</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/hacktu_hackathon/Frontend/static/css/login.css">
+</head>
+<body>
+    <!-- Navbar -->
+<nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light shadow-sm fixed-top">
+  <div class="container">
+      <!-- Logo and Brand -->
+      <a class="navbar-brand d-flex align-items-center" href="#">
+         
+        <span class="ms-2 fw-bold">EasyFundBuddy</span>
+    </a>
+
+      <!-- Toggle Button -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navigation Items -->
+      <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav ms-auto align-items-center">
+              <!-- Personal Dropdown -->
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                      <i class="bi bi-person"></i> Personal Loan
+                  </a>
+                  <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">🏠 Home Loan</a></li>
+                      
+                  </ul>
+              </li>
+              <!-- Contact Us Link -->
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Contact Us</a>
+              </li>
+        
+</nav>
+
+          
+
+    <div class="main-content">
+        <div class="login-container">
+            <h1>   Sign into </h1>
+            <p class="welcome-text">Welcome back! Please sign in to continue</p>
+            <button class="google-btn">
+                <img src="https://cdn.cdnlogo.com/logos/g/35/google-icon.svg" alt="Google" width="20">
+                Continue with Google
+            </button>
+            <div class="divider">or</div>
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" id="email" placeholder="Enter your email">
+            </div>
+            <button class="continue-btn">Continue →</button>
+            <p class="signup-link">
+                Don't have an account? <a href="signup.html">Sign up</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+   <footer class="footer-section">
+    <div class="container">
+        <div class="footer-content">
+            <!-- Contact Info -->
+            <div class="footer-box">
+                <h4>Contact</h4>
+                <p><i class="fas fa-phone-alt"></i> +91 9334170932</p>
+                <p><i class="fas fa-envelope"></i> easyfundbuddy@gmail.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> Kohka, Bhilai, Chhattisgarh, India</p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-box">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
+            </div>
+
+            <!-- Legal -->
+            <div class="footer-box">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+
+            <!-- Social Media -->
+            <div class="footer-box">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="footer-bottom">
+            <p>&copy; 2025 EasyFundBuddy. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+
+    <script src="/hacktu_hackathon/Frontend/static/js/login.js"></script>
+</body>
+</html>

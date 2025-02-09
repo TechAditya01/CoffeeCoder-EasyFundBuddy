@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PAN & Bank Verification</title>
+  <link rel="stylesheet" href="/hacktu_hackathon/Frontend/static/css/pan.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <h1>Loan Application</h1>
+  </nav>
+
+  <!-- Main Container -->
+  <div class="main-container">
+    
+    <!-- Left Section (Steps) -->
+    <div class="left-section">
+      <h3>Steps</h3>
+      <ul class="steps-list">
+        <li class="completed">✔ Aadhaar Verification</li>
+        <li class="completed">✔ PAN Verification</li>
+        <li class="active">➤ Bank Selection</li>
+        <li>4. Submit</li>
+      </ul>
+    </div>
+
+    <!-- Right Section -->
+    <div class="right-section">
+      <div class="container">
+        <h2>PAN & Bank Verification</h2>
+
+        <!-- PAN Verification -->
+        <div class="input-group">
+          <label for="panNumber">Enter PAN Number</label>
+          <input type="text" id="panNumber" maxlength="10" placeholder="ABCDE1234F">
+          <small id="panError" class="error"></small>
+        </div>
+
+        <button id="verifyBtn">Verify PAN</button>
+
+        <!-- Bank Selection (Hidden Initially) -->
+        <div id="bankSection" class="hidden">
+          <h3>Select Your Bank</h3>
+          <select id="bankSelect">
+            <option value="">-- Select Bank --</option>
+            <option value="SBI">State Bank of India</option>
+            <option value="HDFC">HDFC Bank</option>
+            <option value="ICICI">ICICI Bank</option>
+          </select>
+
+          <!-- Auto-Filled Bank Details -->
+          <div class="bank-details hidden">
+            <p><strong>Account Holder:</strong> <span id="accountHolder">Rahul Sharma</span></p>
+            <p><strong>Account Number:</strong> <span id="accountNumber"></span></p>
+            <p><strong>IFSC Code:</strong> <span id="ifscCode"></span></p>
+            <p><strong>Branch:</strong> <span id="branchName"></span></p>
+          </div>
+
+          <button id="submitBtn">Submit</button>
+        </div>
+
+        <!-- Submission Message (Hidden Initially) -->
+        <div id="submissionMessage" class="hidden">
+          <p>Your application is being verified. Redirecting to Dashboard...</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <
+
+  <script src="/hacktu_hackathon/Frontend/static/js/pan.js"></script>
+</body>
+</html>

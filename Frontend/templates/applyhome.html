@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Loan Apply</title>
+    <link rel="stylesheet" href="/hacktu_hack/Frontend/static/css/applyhome.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <h1>Fund Buddy</h1>
+        </div>
+    </nav>
+    
+    <main>
+        <div class="container">
+            <div class="loan-application">
+                <div class="left-section">
+                    <h2>Get a Personal Loan up to</h2>
+                    <ul>
+                        <li>Flexible Tenure from 12-72 months</li>
+                        <li>Rate of interest starting from 10.85% p.a.</li>
+                        <li>Get your eligibility in a few clicks.</li>
+                    </ul>
+                    <h3>Let's get started with your online personal loan application</h3>
+                </div>
+                <div class="right-section">
+                    <label>Loan Amount</label>
+                    <input type="number" id="loanAmount" placeholder="Enter Loan Amount">
+                    <small class="error" id="loanError"></small>
+                    <small class="info">Please enter Loan Amount between 25,000 & 50,00,000 (Multiples of 1000)</small>
+
+                    <label>Loan Tenure (in months)</label>
+                    <input type="number" id="loanTenure" placeholder="Enter Loan Tenure">
+                    <small class="error" id="tenureError"></small>
+                    
+                    
+                    
+                    <div>
+                        <input type="checkbox" id="agreeConsent"> I consent to Fund Buddy terms regarding information sharing.
+                    </div>
+                    <div>
+                        <input type="checkbox" id="agreePrivacy"> I agree to Fund Buddy Privacy Commitment.
+                    </div>
+                    <small class="error" id="error"></small>
+                    
+                    <button id="applyLoan">I Agree</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2025 Fund Buddy. All rights reserved.</p>
+        </div>
+        
+    </footer>
+    <script>
+      document.getElementById("applyLoan").addEventListener("click", function() {
+        window.location.href = "necessary.html";
+      });
+    </script>
+    <script src="/hacktu_hackathon/Frontend /static/js/home.js"></script>
+</body>
+</html>
